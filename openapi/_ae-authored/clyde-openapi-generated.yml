@@ -1,0 +1,647 @@
+openapi: 3.1.0
+info:
+  title: Clyde API
+  version: '2026-10-12'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-12: 9 operation(s) read from 11 public documentation page(s) (each operation
+    names its page in x-source). This is not the provider''s published contract; Clyde has published no machine-readable contract that the pipeline
+    could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 0
+    documentation: 9
+    pages-with-code: 0
+    pages-read: 11
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-12'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.joinclyde.com/reference/products-1
+  - https://docs.joinclyde.com/reference/createclaim
+  - https://docs.joinclyde.com/reference/createorder
+  - https://docs.joinclyde.com/reference/updateorder
+  - https://docs.joinclyde.com/reference/createproduct
+  - https://docs.joinclyde.com/reference/updateproduct
+  - https://docs.joinclyde.com/reference/updatevoucher
+  - https://docs.joinclyde.com/reference/createproducts
+  - https://docs.joinclyde.com/reference/createtaxonomy
+  - https://docs.joinclyde.com/reference/createvouchers
+  - https://docs.joinclyde.com/reference/addtaxonomyterm
+servers:
+- url: https://api.joinclyde.com
+paths:
+  /contract-sales/fbd13a8f-b746-4988-8925-456843ddc533/claims:
+    post:
+      operationId: post_contract_sales_fbd13a8f_b746_4988_8925_456843ddc533_claims
+      tags:
+      - Contract Sales
+      summary: Reporting a claim filed by a customer to Clyde.
+      description: A claim is filed on an individual contract sale, using the ID of the contract sale returned in the order creation response.
+      x-source: https://docs.joinclyde.com/reference/createclaim
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostContractSalesFbd13A8FB74649888925456843Ddc533ClaimsReque'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostContractSalesFbd13A8FB74649888925456843Ddc533ClaimsRespo'
+      x-evidence:
+        kind: documentation
+  /orders:
+    post:
+      operationId: post_orders
+      tags:
+      - Orders
+      summary: Create Order
+      description: Creates a new order. The request body must contain an id used to reference the order, which should correspond to the order
+        ID in your order management system.
+      x-source: https://docs.joinclyde.com/reference/createorder
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostOrdersRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostOrdersResponse'
+      x-evidence:
+        kind: documentation
+  /orders/{orderId}:
+    put:
+      operationId: put_orders_orderId
+      tags:
+      - Orders
+      summary: Update Order
+      description: Update various properties of an order using this route. Only provided fields will be updated.
+      x-source: https://docs.joinclyde.com/reference/updateorder
+      parameters:
+      - name: orderId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutOrdersOrderidRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutOrdersOrderidResponse'
+      x-evidence:
+        kind: documentation
+  /products:
+    post:
+      operationId: post_products
+      tags:
+      - Products
+      summary: Create Product
+      description: Adds a new product to Clyde to be matched with contracts
+      x-source: https://docs.joinclyde.com/reference/products-1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostProductsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostProductsResponse'
+      x-evidence:
+        kind: documentation
+  /products/SKU789:
+    put:
+      operationId: put_products_SKU789
+      tags:
+      - Products
+      summary: Update Product
+      description: A product's SKU can be changed by using this endpoint with the current SKU in the request URL, and the new SKU in the request
+        body. Only provided fields will be updated.
+      x-source: https://docs.joinclyde.com/reference/updateproduct
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutProductsSku789Request'
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /products/bulk:
+    post:
+      operationId: post_products_bulk
+      tags:
+      - Products
+      summary: Adds new products to Clyde to be matched with contracts
+      description: Adds multiple products at once, limit 10,000/minute unless you contact support or are connected through a preferred partnership.
+      x-source: https://docs.joinclyde.com/reference/createproducts
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostProductsBulkRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /taxonomies:
+    post:
+      operationId: post_taxonomies
+      tags:
+      - Taxonomies
+      summary: Creates a new taxonomy tree
+      x-source: https://docs.joinclyde.com/reference/createtaxonomy
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostTaxonomiesRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostTaxonomiesResponse'
+      x-evidence:
+        kind: documentation
+  /vouchers/SOME-CODE:
+    put:
+      operationId: put_vouchers_SOME_CODE
+      tags:
+      - Vouchers
+      summary: Update Voucher
+      description: Updates a Voucher by code
+      x-source: https://docs.joinclyde.com/reference/updatevoucher
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutVouchersSomeCodeRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutVouchersSomeCodeResponse'
+      x-evidence:
+        kind: documentation
+  /vouchers/bulk:
+    post:
+      operationId: post_vouchers_bulk
+      tags:
+      - Vouchers
+      summary: Create Vouchers (Bulk)
+      description: Adds new vouchers to Clyde to be used with claims.
+      x-source: https://docs.joinclyde.com/reference/createvouchers
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostVouchersBulkRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostVouchersBulkResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    PostContractSalesFbd13A8FB74649888925456843Ddc533ClaimsReque:
+      type: object
+      properties:
+        data:
+          type: object
+          description: Top‑level object containing all of the request data
+        data.type:
+          type: string
+          description: Must be "claim"
+        data.attributes:
+          type: object
+          description: Attributes of the claim
+        data.attributes.claimType:
+          type: string
+          description: Type of claim (e.g., "stoppedWorking")
+        data.attributes.description:
+          type: string
+          description: Description of the issue
+        data.attributes.failureDate:
+          type: string
+          description: Date of failure (UTC, format YYYY‑MM‑DD)
+        data.attributes.filedDate:
+          type: string
+          description: Date the claim was filed (UTC, format YYYY‑MM‑DD)
+        data.attributes.retailerAssessment:
+          type: object
+          description: Details of any retailer assessment performed before creating the claim
+        data.attributes.retailerAssessment.date:
+          type: string
+          description: Assessment date (UTC, format YYYY‑MM‑DD)
+        data.attributes.retailerAssessment.status:
+          type: string
+          description: Assessment status (e.g., "approved")
+        data.attributes.retailerAssessment.resolutionType:
+          type: string
+          description: Resolution type (e.g., "replace")
+        data.attributes.retailerAssessment.resolutionMethod:
+          type: string
+          description: Resolution method (e.g., "payout")
+        data.attributes.retailerAssessment.resolutionQuote:
+          type: number
+          description: Monetary quote for the resolution
+      required:
+      - data
+      - data.type
+      - data.attributes
+      - data.attributes.claimType
+      - data.attributes.description
+      - data.attributes.failureDate
+      - data.attributes.filedDate
+    PostContractSalesFbd13A8FB74649888925456843Ddc533ClaimsRespo:
+      type: object
+      properties:
+        status:
+          type: string
+          description: 'One of: inProcess, denied, underClydeReview, approved'
+        history:
+          type: array
+          description: Events in the claim's history since creation
+    PostOrdersRequest:
+      type: object
+      properties:
+        data:
+          type: object
+          description: Top‑level object containing all of the request data
+        data.type:
+          type: string
+          description: Must be "order"
+        data.id:
+          type: string
+          description: Order ID from your system
+        data.attributes:
+          type: object
+          description: Order attributes
+        data.attributes.merchantReference1:
+          type: string
+        data.attributes.merchantReference2:
+          type: string
+        data.attributes.customer:
+          type: object
+        data.attributes.customer.email:
+          type: string
+        data.attributes.customer.phone:
+          type: string
+        data.attributes.customer.firstName:
+          type: string
+        data.attributes.customer.lastName:
+          type: string
+        data.attributes.customer.address1:
+          type: string
+        data.attributes.customer.address2:
+          type: string
+        data.attributes.customer.city:
+          type: string
+        data.attributes.customer.province:
+          type: string
+        data.attributes.customer.zip:
+          type: string
+        data.attributes.customer.country:
+          type: string
+        data.attributes.customer.addressType:
+          type: string
+        data.attributes.contractSales:
+          type: array
+          description: Array of contract sales
+        data.attributes.contractSales[].lineItemId:
+          type: string
+        data.attributes.contractSales[].productSku:
+          type: string
+        data.attributes.contractSales[].contractSku:
+          type: string
+        data.attributes.contractSales[].productPrice:
+          type: number
+        data.attributes.contractSales[].contractPrice:
+          type: number
+        data.attributes.lineItems:
+          type: array
+        data.attributes.lineItems[].id:
+          type: string
+        data.attributes.lineItems[].productSku:
+          type: string
+        data.attributes.lineItems[].price:
+          type: number
+        data.attributes.lineItems[].quantity:
+          type: integer
+        data.attributes.lineItems[].shipDate:
+          type: string
+          description: Date in UTC
+        data.attributes.orderSource:
+          type: string
+        data.attributes.orderDate:
+          type: string
+          description: Date in UTC
+      required:
+      - data
+      - data.type
+      - data.id
+      - data.attributes
+    PostOrdersResponse:
+      type: object
+      properties:
+        eligible:
+          type: boolean
+          description: Does this order contain a line item eligible for a contract sale
+        daysLeft:
+          type: number
+          description: Days remaining to purchase an eligible contract on this order
+        link:
+          type: string
+          description: Direct link for end customers to purchase a contract associated with this order
+        waitingFor:
+          type: string
+          description: Outstanding date needed to begin eligibility window countdown; values "shipment", "delivery", or "null"
+    PutOrdersOrderidRequest:
+      type: object
+      properties:
+        data:
+          type: object
+          description: Top‑level object containing the order data
+        data.type:
+          type: string
+          description: Must be "order"
+        data.attributes:
+          type: object
+          description: Attributes to update on the order
+        data.attributes.merchantReference1:
+          type: string
+          description: Merchant reference
+        data.attributes.sendNotificationEmail:
+          type: boolean
+          description: Whether to send a notification email
+        data.attributes.customer:
+          type: object
+          description: Customer object (all fields updatable)
+        data.attributes.contractSales:
+          type: array
+          description: Array of contract sales to update or add
+        data.attributes.lineItems:
+          type: array
+          description: Array of line items to update or add
+      required:
+      - data
+      - data.type
+      - data.attributes
+    PutOrdersOrderidResponse:
+      type: object
+      properties:
+        default:
+          type: object
+          description: Standard response object
+    PostProductsRequest:
+      type: object
+      properties:
+        data:
+          type: object
+          description: The top-level object containing all of the request data
+        data.type:
+          type: string
+          description: type of the object, must be "product"
+        data.attributes:
+          type: object
+          description: Attributes of the product
+        data.attributes.name:
+          type: string
+        data.attributes.type:
+          type: string
+        data.attributes.sku:
+          type: string
+        data.attributes.description:
+          type: string
+        data.attributes.manufacturer:
+          type: string
+        data.attributes.barcode:
+          type: string
+        data.attributes.price:
+          type: number
+        data.attributes.imageLink:
+          type: string
+        data.attributes.oemWarrantyLength:
+          type: integer
+        data.attributes.attributes:
+          type: object
+          description: Custom attributes such as size and color
+      required:
+      - data
+      - data.type
+      - data.attributes
+    PostProductsResponse:
+      type: object
+      properties:
+        default:
+          type: object
+          description: Response default
+    PutProductsSku789Request:
+      type: object
+      properties:
+        data:
+          type: object
+          description: The top-level object containing all of the request data
+      required:
+      - data
+    PostProductsBulkRequest:
+      type: object
+      properties:
+        data:
+          type: object
+          description: The top-level object containing all of the request data
+        data.type:
+          type: string
+          description: Resource type, e.g., "products"
+        data.attributes:
+          type: object
+        data.attributes.products:
+          type: array
+          description: Array of product objects
+        data.attributes.products[].name:
+          type: string
+        data.attributes.products[].type:
+          type: string
+        data.attributes.products[].sku:
+          type: string
+        data.attributes.products[].description:
+          type: string
+        data.attributes.products[].manufacturer:
+          type: string
+        data.attributes.products[].barcode:
+          type: string
+        data.attributes.products[].price:
+          type: number
+        data.attributes.products[].imageLink:
+          type: string
+        data.attributes.products[].attributes:
+          type: object
+          description: Custom attributes for the product
+        data.attributes.products[].attributes.size:
+          type: string
+        data.attributes.products[].attributes.color:
+          type: string
+      required:
+      - data
+    PostTaxonomiesRequest:
+      type: object
+      properties:
+        data:
+          type: object
+          description: Root object for the request payload
+        data.type:
+          type: string
+          description: Must be "taxonomies"
+        data.attributes:
+          type: object
+          description: Attributes container
+        data.attributes.terms:
+          type: array
+          description: Array of taxonomy terms
+        data.attributes.terms[].id:
+          type: string
+          description: UUIDv4 identifier for the term
+        data.attributes.terms[].term:
+          type: string
+          description: The actual category or name of the item
+        data.attributes.terms[].parentId:
+          type: string
+          description: UUIDv4 identifier of the parent term, if any
+        data.attributes.terms[].level:
+          type: integer
+          description: Depth of the term in the hierarchy (0 = root)
+      required:
+      - data
+      - data.type
+      - data.attributes
+      - data.attributes.terms
+      - data.attributes.terms[].id
+      - data.attributes.terms[].term
+      - data.attributes.terms[].level
+    PostTaxonomiesResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          description: Array of created taxonomy term objects
+        data[].type:
+          type: string
+          description: Resource type, e.g., "taxonomy"
+        data[].attributes.id:
+          type: string
+          description: UUIDv4 identifier of the term
+        data[].attributes.term:
+          type: string
+          description: Term name
+        data[].attributes.parentId:
+          type: string
+          description: UUIDv4 identifier of the parent term
+        data[].attributes.level:
+          type: integer
+          description: Depth level of the term
+        data[].attributes.treeId:
+          type: string
+          description: Identifier of the taxonomy tree
+    PutVouchersSomeCodeRequest:
+      type: object
+      properties:
+        data:
+          type: object
+          description: The top-level object containing all of the request data
+        data.type:
+          type: string
+          description: Resource type, must be "voucher"
+        data.attributes.voucher.value:
+          type: number
+          description: New voucher value
+      required:
+      - data
+      - data.type
+    PutVouchersSomeCodeResponse:
+      type: object
+      properties:
+        default:
+          type: string
+          description: Response example (updated voucher)
+    PostVouchersBulkRequest:
+      type: object
+      properties:
+        data:
+          type: object
+          description: The top-level object containing all of the request data
+        data.type:
+          type: string
+          description: type of the resource, should be "voucher"
+        data.attributes:
+          type: object
+        data.attributes.vouchers:
+          type: array
+          description: Array of voucher objects to create
+        data.attributes.vouchers[].code:
+          type: string
+          description: Voucher code
+        data.attributes.vouchers[].productSku:
+          type: string
+          description: Product SKU associated with the voucher
+        data.attributes.vouchers[].value:
+          type: number
+          description: Value of the voucher
+        data.attributes.vouchers[].description:
+          type: string
+          description: Description of the voucher
+        data.attributes.vouchers[].expiresDate:
+          type: string
+          description: Expiration date of the voucher
+        data.attributes.vouchers[].startDate:
+          type: string
+          description: Start date of the voucher
+      required:
+      - data
+    PostVouchersBulkResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          description: Response data object
+tags:
+- name: Contract Sales
+- name: Orders
+- name: Products
+- name: Taxonomies
+- name: Vouchers

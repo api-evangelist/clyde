@@ -1,0 +1,103 @@
+generated: '2026-10-12'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/_ae-authored/clyde-openapi-generated.yml
+vocabulary:
+  name: Clyde Domain Vocabulary
+  description: 'Terms declared by Clyde''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-12'
+  terms:
+  - term: PostContractSalesFbd13A8FB74649888925456843Ddc533ClaimsReque
+    definition: 'Object declared by the contract with fields: data, data.type, data.attributes, data.attributes.claimType, data.attributes.description,
+      data.attributes.failureDate, data.attributes.filedDate, data.attributes.retailerAssessment, data.attributes.retailerAssessment.date, data.attributes.retailerAssessment.status,
+      data.attributes.retailerAssessment.resolutionType, data.attributes.retailerAssessment.resolutionMethod. (1 more)'
+    tags:
+    - Object
+    source: openapi/_ae-authored/clyde-openapi-generated.yml#/components/schemas/PostContractSalesFbd13A8FB74649888925456843Ddc533ClaimsReque
+  - term: PostContractSalesFbd13A8FB74649888925456843Ddc533ClaimsRespo
+    definition: 'Object declared by the contract with fields: status, history.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/clyde-openapi-generated.yml#/components/schemas/PostContractSalesFbd13A8FB74649888925456843Ddc533ClaimsRespo
+  - term: PostOrdersRequest
+    definition: 'Object declared by the contract with fields: data, data.type, data.id, data.attributes, data.attributes.merchantReference1, data.attributes.merchantReference2,
+      data.attributes.customer, data.attributes.customer.email, data.attributes.customer.phone, data.attributes.customer.firstName, data.attributes.customer.lastName,
+      data.attributes.customer.address1. (20 more)'
+    tags:
+    - Object
+    source: openapi/_ae-authored/clyde-openapi-generated.yml#/components/schemas/PostOrdersRequest
+  - term: PostOrdersResponse
+    definition: 'Object declared by the contract with fields: eligible, daysLeft, link, waitingFor.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/clyde-openapi-generated.yml#/components/schemas/PostOrdersResponse
+  - term: PutOrdersOrderidRequest
+    definition: 'Object declared by the contract with fields: data, data.type, data.attributes, data.attributes.merchantReference1, data.attributes.sendNotificationEmail,
+      data.attributes.customer, data.attributes.contractSales, data.attributes.lineItems.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/clyde-openapi-generated.yml#/components/schemas/PutOrdersOrderidRequest
+  - term: PutOrdersOrderidResponse
+    definition: 'Object declared by the contract with fields: default.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/clyde-openapi-generated.yml#/components/schemas/PutOrdersOrderidResponse
+  - term: PostProductsRequest
+    definition: 'Object declared by the contract with fields: data, data.type, data.attributes, data.attributes.name, data.attributes.type, data.attributes.sku,
+      data.attributes.description, data.attributes.manufacturer, data.attributes.barcode, data.attributes.price, data.attributes.imageLink, data.attributes.oemWarrantyLength.
+      (1 more)'
+    tags:
+    - Object
+    source: openapi/_ae-authored/clyde-openapi-generated.yml#/components/schemas/PostProductsRequest
+  - term: PostProductsResponse
+    definition: 'Object declared by the contract with fields: default.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/clyde-openapi-generated.yml#/components/schemas/PostProductsResponse
+  - term: PutProductsSku789Request
+    definition: 'Object declared by the contract with fields: data.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/clyde-openapi-generated.yml#/components/schemas/PutProductsSku789Request
+  - term: PostProductsBulkRequest
+    definition: 'Object declared by the contract with fields: data, data.type, data.attributes, data.attributes.products, data.attributes.products[].name,
+      data.attributes.products[].type, data.attributes.products[].sku, data.attributes.products[].description, data.attributes.products[].manufacturer,
+      data.attributes.products[].barcode, data.attributes.products[].price, data.attributes.products[].imageLink. (3 more)'
+    tags:
+    - Object
+    source: openapi/_ae-authored/clyde-openapi-generated.yml#/components/schemas/PostProductsBulkRequest
+  - term: PostTaxonomiesRequest
+    definition: 'Object declared by the contract with fields: data, data.type, data.attributes, data.attributes.terms, data.attributes.terms[].id,
+      data.attributes.terms[].term, data.attributes.terms[].parentId, data.attributes.terms[].level.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/clyde-openapi-generated.yml#/components/schemas/PostTaxonomiesRequest
+  - term: PostTaxonomiesResponse
+    definition: 'Object declared by the contract with fields: data, data[].type, data[].attributes.id, data[].attributes.term, data[].attributes.parentId,
+      data[].attributes.level, data[].attributes.treeId.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/clyde-openapi-generated.yml#/components/schemas/PostTaxonomiesResponse
+  - term: PutVouchersSomeCodeRequest
+    definition: 'Object declared by the contract with fields: data, data.type, data.attributes.voucher.value.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/clyde-openapi-generated.yml#/components/schemas/PutVouchersSomeCodeRequest
+  - term: PutVouchersSomeCodeResponse
+    definition: 'Object declared by the contract with fields: default.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/clyde-openapi-generated.yml#/components/schemas/PutVouchersSomeCodeResponse
+  - term: PostVouchersBulkRequest
+    definition: 'Object declared by the contract with fields: data, data.type, data.attributes, data.attributes.vouchers, data.attributes.vouchers[].code,
+      data.attributes.vouchers[].productSku, data.attributes.vouchers[].value, data.attributes.vouchers[].description, data.attributes.vouchers[].expiresDate,
+      data.attributes.vouchers[].startDate.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/clyde-openapi-generated.yml#/components/schemas/PostVouchersBulkRequest
+  - term: PostVouchersBulkResponse
+    definition: 'Object declared by the contract with fields: data.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/clyde-openapi-generated.yml#/components/schemas/PostVouchersBulkResponse

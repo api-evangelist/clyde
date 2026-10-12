@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/clyde/main/json-schema/clyde-post-contract-sales-fbd13-a8-fb74649888925456843-ddc533-claims-reque-schema.json",
+  "title": "PostContractSalesFbd13A8FB74649888925456843Ddc533ClaimsReque",
+  "x-generated": "2026-10-12",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/clyde-openapi-generated.yml#/components/schemas/PostContractSalesFbd13A8FB74649888925456843Ddc533ClaimsReque",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "description": "Top‑level object containing all of the request data"
+    },
+    "data.type": {
+      "type": "string",
+      "description": "Must be \"claim\""
+    },
+    "data.attributes": {
+      "type": "object",
+      "description": "Attributes of the claim"
+    },
+    "data.attributes.claimType": {
+      "type": "string",
+      "description": "Type of claim (e.g., \"stoppedWorking\")"
+    },
+    "data.attributes.description": {
+      "type": "string",
+      "description": "Description of the issue"
+    },
+    "data.attributes.failureDate": {
+      "type": "string",
+      "description": "Date of failure (UTC, format YYYY‑MM‑DD)"
+    },
+    "data.attributes.filedDate": {
+      "type": "string",
+      "description": "Date the claim was filed (UTC, format YYYY‑MM‑DD)"
+    },
+    "data.attributes.retailerAssessment": {
+      "type": "object",
+      "description": "Details of any retailer assessment performed before creating the claim"
+    },
+    "data.attributes.retailerAssessment.date": {
+      "type": "string",
+      "description": "Assessment date (UTC, format YYYY‑MM‑DD)"
+    },
+    "data.attributes.retailerAssessment.status": {
+      "type": "string",
+      "description": "Assessment status (e.g., \"approved\")"
+    },
+    "data.attributes.retailerAssessment.resolutionType": {
+      "type": "string",
+      "description": "Resolution type (e.g., \"replace\")"
+    },
+    "data.attributes.retailerAssessment.resolutionMethod": {
+      "type": "string",
+      "description": "Resolution method (e.g., \"payout\")"
+    },
+    "data.attributes.retailerAssessment.resolutionQuote": {
+      "type": "number",
+      "description": "Monetary quote for the resolution"
+    }
+  },
+  "required": [
+    "data",
+    "data.type",
+    "data.attributes",
+    "data.attributes.claimType",
+    "data.attributes.description",
+    "data.attributes.failureDate",
+    "data.attributes.filedDate"
+  ]
+}

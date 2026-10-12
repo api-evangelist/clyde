@@ -1,25 +1,128 @@
 aid: clyde
+
 name: Clyde
-description: 'Clyde is a company surfaced via the API Evangelist harvest backlog (source: vc-portfolio;
-  backed by starting-line-vc) and added to the network as a stub for full-pipeline profiling.'
+
+image: https://joinclyde.com/og-image.jpg
+
+description: Clyde provides ownership enrichment solutions that help businesses drive lifetime value and revenue through extended warranty and
+  product protection plans. Now part of Cover Genius, Clyde offers registration, resolution, and partnership tools for merchants to engage customers,
+  automate issue resolution, and unlock cost savings. The platform includes documentation, a developer portal, and various integration points
+  for insurance and warranty services.
+
 url: https://raw.githubusercontent.com/api-evangelist/clyde/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:vc-portfolio
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-12 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-12'
+
 modified: '2026-10-12'
+
 tags:
-- Company
-apis: []
+- Extended Warranty
+- Product Registration
+- Shipping Protection
+- E‑commerce Integration
+- Claims Processing
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
-x-backed-by:
-- starting-line-vc
+
 common:
+- type: Spectral
+  url: rules/clyde-rules.yml
+- type: JSONLD
+  url: json-ld/clyde-context.jsonld
+- type: Vocabulary
+  url: vocabulary/clyde-vocabulary.yml
+- type: DataModel
+  url: data-model/clyde-data-model.yml
+- type: Conformance
+  url: conformance/clyde-conformance.yml
+- type: LLMsTxt
+  url: llms/clyde-llms.txt
+- type: Hosts
+  url: hosts/clyde-hosts.yml
+- type: Vendors
+  url: vendors/clyde-vendors.yml
+- type: TermsOfService
+  url: https://joinclyde.com/legal/terms-of-use
+- type: StatusPage
+  url: https://status.joinclyde.com/
+- type: PrivacyPolicy
+  url: https://joinclyde.com/legal/privacy-policy
+- type: APIReference
+  url: https://docs.joinclyde.com/reference
+- type: GettingStarted
+  url: https://docs.joinclyde.com/docs/sfcc-quickstart
+- type: DomainSecurity
+  url: security/clyde-domain-security.yml
 - type: Website
   url: https://joinclyde.com
+- type: DeveloperPortal
+  url: https://docs.joinclyde.com/docs
+- type: Documentation
+  url: https://docs.joinclyde.com/docs
+- type: Blog
+  url: https://joinclyde.com/blog
+- type: Support
+  url: https://support.joinclyde.com/hc/en-us
+- type: Pricing
+  url: https://joinclyde.com/extended-warranty
+
+apis:
+- name: Clyde API
+  description: Clyde's API provides endpoints for warranty registration, issue resolution, and partnership tools.
+  humanURL: https://docs.joinclyde.com/reference/introduction-1.md
+  baseURL: null
+  aid: clyde:clyde-api-2
+- aid: clyde:clyde-api
+  name: Clyde API
+  description: 'Clyde API as documented publicly: 9 operations. Contract generated from the documentation by API Evangelist (2026-10-12); not
+
+    the provider''s own document.'
+  humanURL: https://docs.joinclyde.com/reference/products-1
+  baseURL: https://api.joinclyde.com
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/clyde-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/clyde-post-orders-request-schema.json
+  - type: JSONSchema
+    url: json-schema/clyde-post-contract-sales-fbd13-a8-fb74649888925456843-ddc533-claims-reque-schema.json
+  - type: JSONSchema
+    url: json-schema/clyde-post-products-bulk-request-schema.json
+  - type: JSONSchema
+    url: json-schema/clyde-post-vouchers-bulk-request-schema.json
+  - type: JSONSchema
+    url: json-schema/clyde-post-taxonomies-request-schema.json
+  - type: JSONSchema
+    url: json-schema/clyde-post-products-request-schema.json
+
+x-backed-by:
+- starting-line-vc
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: OpenAPI spec endpoints returned 401 unauthorized and no machine-readable contract was found.
+  evidence:
+  - url: https://api.joinclyde.com/openapi.json
+    status: 401
+  checked: '2026-10-12'
+x-enrichment:
+  date: '2026-10-12'
+  status: enriched
+  artifacts_added: 19
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

@@ -1,0 +1,60 @@
+generated: '2026-10-12'
+method: derived
+generator: derive-mcp-candidate.py
+source:
+- openapi/_ae-authored/clyde-openapi-generated.yml
+status: candidate
+deployment:
+  mode: none
+  auth: unknown
+  verified: probed
+note: 'No MCP server was found. The pre-flight posted tools/list to /mcp on api.joinclyde.com, joinclyde.com, app.joinclyde.com, docs.joinclyde.com;
+  verdict gated (https://docs.joinclyde.com/mcp answered 401: the edge authenticates before it routes, which proves nothing either way). Candidate
+  tools below are derived from the 9 operation(s) in the provider''s own OpenAPI (9 listed); they describe what a server WOULD expose, not one
+  that exists.'
+tools:
+- name: post_contract_sales_fbd13a8f_b746_4988_8925_456843ddc533_cla
+  operationId: post_contract_sales_fbd13a8f_b746_4988_8925_456843ddc533_claims
+  method: POST
+  path: /contract-sales/fbd13a8f-b746-4988-8925-456843ddc533/claims
+  description: Reporting a claim filed by a customer to Clyde.
+- name: post_orders
+  operationId: post_orders
+  method: POST
+  path: /orders
+  description: Create Order
+- name: put_orders_order_id
+  operationId: put_orders_orderId
+  method: PUT
+  path: /orders/{orderId}
+  description: Update Order
+- name: post_products
+  operationId: post_products
+  method: POST
+  path: /products
+  description: Create Product
+- name: put_products_sku789
+  operationId: put_products_SKU789
+  method: PUT
+  path: /products/SKU789
+  description: Update Product
+- name: post_products_bulk
+  operationId: post_products_bulk
+  method: POST
+  path: /products/bulk
+  description: Adds new products to Clyde to be matched with contracts
+- name: post_taxonomies
+  operationId: post_taxonomies
+  method: POST
+  path: /taxonomies
+  description: Creates a new taxonomy tree
+- name: put_vouchers_some_code
+  operationId: put_vouchers_SOME_CODE
+  method: PUT
+  path: /vouchers/SOME-CODE
+  description: Update Voucher
+- name: post_vouchers_bulk
+  operationId: post_vouchers_bulk
+  method: POST
+  path: /vouchers/bulk
+  description: Create Vouchers (Bulk)

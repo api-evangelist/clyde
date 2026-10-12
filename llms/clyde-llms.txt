@@ -1,0 +1,12 @@
+# Clyde Documentation
+
+> Welcome to Clyde's API documentation page.
+
+## Guides: Implement
+- [SFCC Quickstart](https://docs.joinclyde.com/docs/sfcc-quickstart.md): Quickstart guide to integrating Clyde's SFCC link cartridge into your project.
+
+## Guides: Partnerships & Integrations
+- [Klaviyo](https://docs.joinclyde.com/docs/klaviyo-integration.md): Learn how to send post purchase emails & SMS messages through Clyde's integration with Klaviyo
+
+## API Reference: Endpoints
+- [Update Product Attributes Schema](https://docs.joinclyde.com/reference/updateproductattributesschema.md): Update the attributes schema for your account

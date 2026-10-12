@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/clyde/main/json-schema/clyde-post-taxonomies-request-schema.json",
+  "title": "PostTaxonomiesRequest",
+  "x-generated": "2026-10-12",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/clyde-openapi-generated.yml#/components/schemas/PostTaxonomiesRequest",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "description": "Root object for the request payload"
+    },
+    "data.type": {
+      "type": "string",
+      "description": "Must be \"taxonomies\""
+    },
+    "data.attributes": {
+      "type": "object",
+      "description": "Attributes container"
+    },
+    "data.attributes.terms": {
+      "type": "array",
+      "description": "Array of taxonomy terms"
+    },
+    "data.attributes.terms[].id": {
+      "type": "string",
+      "description": "UUIDv4 identifier for the term"
+    },
+    "data.attributes.terms[].term": {
+      "type": "string",
+      "description": "The actual category or name of the item"
+    },
+    "data.attributes.terms[].parentId": {
+      "type": "string",
+      "description": "UUIDv4 identifier of the parent term, if any"
+    },
+    "data.attributes.terms[].level": {
+      "type": "integer",
+      "description": "Depth of the term in the hierarchy (0 = root)"
+    }
+  },
+  "required": [
+    "data",
+    "data.type",
+    "data.attributes",
+    "data.attributes.terms",
+    "data.attributes.terms[].id",
+    "data.attributes.terms[].term",
+    "data.attributes.terms[].level"
+  ]
+}

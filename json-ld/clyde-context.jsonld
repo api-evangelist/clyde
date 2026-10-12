@@ -1,0 +1,238 @@
+{
+  "@context": {
+    "@vocab": "https://joinclyde.com/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "clyde": "https://joinclyde.com/schema#",
+    "PostContractSalesFbd13A8FB74649888925456843Ddc533ClaimsReque": "clyde:PostContractSalesFbd13A8FB74649888925456843Ddc533ClaimsReque",
+    "data": {
+      "@id": "clyde:data"
+    },
+    "data.type": {
+      "@id": "clyde:data.type",
+      "@type": "xsd:string"
+    },
+    "data.attributes": {
+      "@id": "clyde:data.attributes"
+    },
+    "data.attributes.claimType": {
+      "@id": "clyde:data.attributes.claimType",
+      "@type": "xsd:string"
+    },
+    "data.attributes.description": {
+      "@id": "clyde:data.attributes.description",
+      "@type": "xsd:string"
+    },
+    "data.attributes.failureDate": {
+      "@id": "clyde:data.attributes.failureDate",
+      "@type": "xsd:string"
+    },
+    "data.attributes.filedDate": {
+      "@id": "clyde:data.attributes.filedDate",
+      "@type": "xsd:string"
+    },
+    "data.attributes.retailerAssessment": {
+      "@id": "clyde:data.attributes.retailerAssessment"
+    },
+    "data.attributes.retailerAssessment.date": {
+      "@id": "clyde:data.attributes.retailerAssessment.date",
+      "@type": "xsd:string"
+    },
+    "data.attributes.retailerAssessment.status": {
+      "@id": "clyde:data.attributes.retailerAssessment.status",
+      "@type": "xsd:string"
+    },
+    "data.attributes.retailerAssessment.resolutionType": {
+      "@id": "clyde:data.attributes.retailerAssessment.resolutionType",
+      "@type": "xsd:string"
+    },
+    "data.attributes.retailerAssessment.resolutionMethod": {
+      "@id": "clyde:data.attributes.retailerAssessment.resolutionMethod",
+      "@type": "xsd:string"
+    },
+    "data.attributes.retailerAssessment.resolutionQuote": {
+      "@id": "clyde:data.attributes.retailerAssessment.resolutionQuote",
+      "@type": "xsd:decimal"
+    },
+    "PostContractSalesFbd13A8FB74649888925456843Ddc533ClaimsRespo": "clyde:PostContractSalesFbd13A8FB74649888925456843Ddc533ClaimsRespo",
+    "status": {
+      "@id": "clyde:status",
+      "@type": "xsd:string"
+    },
+    "history": {
+      "@id": "clyde:history",
+      "@container": "@list"
+    },
+    "PostOrdersRequest": "clyde:PostOrdersRequest",
+    "data.id": {
+      "@id": "clyde:data.id",
+      "@type": "xsd:string"
+    },
+    "data.attributes.merchantReference1": {
+      "@id": "clyde:data.attributes.merchantReference1",
+      "@type": "xsd:string"
+    },
+    "data.attributes.merchantReference2": {
+      "@id": "clyde:data.attributes.merchantReference2",
+      "@type": "xsd:string"
+    },
+    "data.attributes.customer": {
+      "@id": "clyde:data.attributes.customer"
+    },
+    "data.attributes.customer.email": {
+      "@id": "clyde:data.attributes.customer.email",
+      "@type": "xsd:string"
+    },
+    "data.attributes.customer.phone": {
+      "@id": "clyde:data.attributes.customer.phone",
+      "@type": "xsd:string"
+    },
+    "data.attributes.customer.firstName": {
+      "@id": "clyde:data.attributes.customer.firstName",
+      "@type": "xsd:string"
+    },
+    "data.attributes.customer.lastName": {
+      "@id": "clyde:data.attributes.customer.lastName",
+      "@type": "xsd:string"
+    },
+    "data.attributes.customer.address1": {
+      "@id": "clyde:data.attributes.customer.address1",
+      "@type": "xsd:string"
+    },
+    "data.attributes.customer.address2": {
+      "@id": "clyde:data.attributes.customer.address2",
+      "@type": "xsd:string"
+    },
+    "data.attributes.customer.city": {
+      "@id": "clyde:data.attributes.customer.city",
+      "@type": "xsd:string"
+    },
+    "data.attributes.customer.province": {
+      "@id": "clyde:data.attributes.customer.province",
+      "@type": "xsd:string"
+    },
+    "data.attributes.customer.zip": {
+      "@id": "clyde:data.attributes.customer.zip",
+      "@type": "xsd:string"
+    },
+    "data.attributes.customer.country": {
+      "@id": "clyde:data.attributes.customer.country",
+      "@type": "xsd:string"
+    },
+    "data.attributes.customer.addressType": {
+      "@id": "clyde:data.attributes.customer.addressType",
+      "@type": "xsd:string"
+    },
+    "data.attributes.contractSales": {
+      "@id": "clyde:data.attributes.contractSales",
+      "@container": "@list"
+    },
+    "data.attributes.lineItems": {
+      "@id": "clyde:data.attributes.lineItems",
+      "@container": "@list"
+    },
+    "data.attributes.orderSource": {
+      "@id": "clyde:data.attributes.orderSource",
+      "@type": "xsd:string"
+    },
+    "data.attributes.orderDate": {
+      "@id": "clyde:data.attributes.orderDate",
+      "@type": "xsd:string"
+    },
+    "PostOrdersResponse": "clyde:PostOrdersResponse",
+    "eligible": {
+      "@id": "clyde:eligible",
+      "@type": "xsd:boolean"
+    },
+    "daysLeft": {
+      "@id": "clyde:daysLeft",
+      "@type": "xsd:decimal"
+    },
+    "link": {
+      "@id": "clyde:link",
+      "@type": "xsd:string"
+    },
+    "waitingFor": {
+      "@id": "clyde:waitingFor",
+      "@type": "xsd:string"
+    },
+    "PutOrdersOrderidRequest": "clyde:PutOrdersOrderidRequest",
+    "data.attributes.sendNotificationEmail": {
+      "@id": "clyde:data.attributes.sendNotificationEmail",
+      "@type": "xsd:boolean"
+    },
+    "PutOrdersOrderidResponse": "clyde:PutOrdersOrderidResponse",
+    "default": {
+      "@id": "clyde:default"
+    },
+    "PostProductsRequest": "clyde:PostProductsRequest",
+    "data.attributes.name": {
+      "@id": "clyde:data.attributes.name",
+      "@type": "xsd:string"
+    },
+    "data.attributes.type": {
+      "@id": "clyde:data.attributes.type",
+      "@type": "xsd:string"
+    },
+    "data.attributes.sku": {
+      "@id": "clyde:data.attributes.sku",
+      "@type": "xsd:string"
+    },
+    "data.attributes.manufacturer": {
+      "@id": "clyde:data.attributes.manufacturer",
+      "@type": "xsd:string"
+    },
+    "data.attributes.barcode": {
+      "@id": "clyde:data.attributes.barcode",
+      "@type": "xsd:string"
+    },
+    "data.attributes.price": {
+      "@id": "clyde:data.attributes.price",
+      "@type": "xsd:decimal"
+    },
+    "data.attributes.imageLink": {
+      "@id": "clyde:data.attributes.imageLink",
+      "@type": "xsd:string"
+    },
+    "data.attributes.oemWarrantyLength": {
+      "@id": "clyde:data.attributes.oemWarrantyLength",
+      "@type": "xsd:integer"
+    },
+    "data.attributes.attributes": {
+      "@id": "clyde:data.attributes.attributes"
+    },
+    "PostProductsResponse": "clyde:PostProductsResponse",
+    "PutProductsSku789Request": "clyde:PutProductsSku789Request",
+    "PostProductsBulkRequest": "clyde:PostProductsBulkRequest",
+    "data.attributes.products": {
+      "@id": "clyde:data.attributes.products",
+      "@container": "@list"
+    },
+    "PostTaxonomiesRequest": "clyde:PostTaxonomiesRequest",
+    "data.attributes.terms": {
+      "@id": "clyde:data.attributes.terms",
+      "@container": "@list"
+    },
+    "PostTaxonomiesResponse": "clyde:PostTaxonomiesResponse",
+    "PutVouchersSomeCodeRequest": "clyde:PutVouchersSomeCodeRequest",
+    "data.attributes.voucher.value": {
+      "@id": "clyde:data.attributes.voucher.value",
+      "@type": "xsd:decimal"
+    },
+    "PutVouchersSomeCodeResponse": "clyde:PutVouchersSomeCodeResponse",
+    "PostVouchersBulkRequest": "clyde:PostVouchersBulkRequest",
+    "data.attributes.vouchers": {
+      "@id": "clyde:data.attributes.vouchers",
+      "@container": "@list"
+    },
+    "PostVouchersBulkResponse": "clyde:PostVouchersBulkResponse"
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "Clyde API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects Clyde's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-10-12) from openapi/_ae-authored/clyde-openapi-generated.yml.",
+  "dcterms:created": "2026-10-12",
+  "dcterms:source": [
+    "openapi/_ae-authored/clyde-openapi-generated.yml"
+  ]
+}

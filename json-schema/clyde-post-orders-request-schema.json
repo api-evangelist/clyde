@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/clyde/main/json-schema/clyde-post-orders-request-schema.json",
+  "title": "PostOrdersRequest",
+  "x-generated": "2026-10-12",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/clyde-openapi-generated.yml#/components/schemas/PostOrdersRequest",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "description": "Top‑level object containing all of the request data"
+    },
+    "data.type": {
+      "type": "string",
+      "description": "Must be \"order\""
+    },
+    "data.id": {
+      "type": "string",
+      "description": "Order ID from your system"
+    },
+    "data.attributes": {
+      "type": "object",
+      "description": "Order attributes"
+    },
+    "data.attributes.merchantReference1": {
+      "type": "string"
+    },
+    "data.attributes.merchantReference2": {
+      "type": "string"
+    },
+    "data.attributes.customer": {
+      "type": "object"
+    },
+    "data.attributes.customer.email": {
+      "type": "string"
+    },
+    "data.attributes.customer.phone": {
+      "type": "string"
+    },
+    "data.attributes.customer.firstName": {
+      "type": "string"
+    },
+    "data.attributes.customer.lastName": {
+      "type": "string"
+    },
+    "data.attributes.customer.address1": {
+      "type": "string"
+    },
+    "data.attributes.customer.address2": {
+      "type": "string"
+    },
+    "data.attributes.customer.city": {
+      "type": "string"
+    },
+    "data.attributes.customer.province": {
+      "type": "string"
+    },
+    "data.attributes.customer.zip": {
+      "type": "string"
+    },
+    "data.attributes.customer.country": {
+      "type": "string"
+    },
+    "data.attributes.customer.addressType": {
+      "type": "string"
+    },
+    "data.attributes.contractSales": {
+      "type": "array",
+      "description": "Array of contract sales"
+    },
+    "data.attributes.contractSales[].lineItemId": {
+      "type": "string"
+    },
+    "data.attributes.contractSales[].productSku": {
+      "type": "string"
+    },
+    "data.attributes.contractSales[].contractSku": {
+      "type": "string"
+    },
+    "data.attributes.contractSales[].productPrice": {
+      "type": "number"
+    },
+    "data.attributes.contractSales[].contractPrice": {
+      "type": "number"
+    },
+    "data.attributes.lineItems": {
+      "type": "array"
+    },
+    "data.attributes.lineItems[].id": {
+      "type": "string"
+    },
+    "data.attributes.lineItems[].productSku": {
+      "type": "string"
+    },
+    "data.attributes.lineItems[].price": {
+      "type": "number"
+    },
+    "data.attributes.lineItems[].quantity": {
+      "type": "integer"
+    },
+    "data.attributes.lineItems[].shipDate": {
+      "type": "string",
+      "description": "Date in UTC"
+    },
+    "data.attributes.orderSource": {
+      "type": "string"
+    },
+    "data.attributes.orderDate": {
+      "type": "string",
+      "description": "Date in UTC"
+    }
+  },
+  "required": [
+    "data",
+    "data.type",
+    "data.id",
+    "data.attributes"
+  ]
+}

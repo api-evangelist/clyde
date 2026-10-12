@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/clyde/main/json-schema/clyde-post-products-request-schema.json",
+  "title": "PostProductsRequest",
+  "x-generated": "2026-10-12",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/clyde-openapi-generated.yml#/components/schemas/PostProductsRequest",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "description": "The top-level object containing all of the request data"
+    },
+    "data.type": {
+      "type": "string",
+      "description": "type of the object, must be \"product\""
+    },
+    "data.attributes": {
+      "type": "object",
+      "description": "Attributes of the product"
+    },
+    "data.attributes.name": {
+      "type": "string"
+    },
+    "data.attributes.type": {
+      "type": "string"
+    },
+    "data.attributes.sku": {
+      "type": "string"
+    },
+    "data.attributes.description": {
+      "type": "string"
+    },
+    "data.attributes.manufacturer": {
+      "type": "string"
+    },
+    "data.attributes.barcode": {
+      "type": "string"
+    },
+    "data.attributes.price": {
+      "type": "number"
+    },
+    "data.attributes.imageLink": {
+      "type": "string"
+    },
+    "data.attributes.oemWarrantyLength": {
+      "type": "integer"
+    },
+    "data.attributes.attributes": {
+      "type": "object",
+      "description": "Custom attributes such as size and color"
+    }
+  },
+  "required": [
+    "data",
+    "data.type",
+    "data.attributes"
+  ]
+}

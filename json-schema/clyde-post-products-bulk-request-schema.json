@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/clyde/main/json-schema/clyde-post-products-bulk-request-schema.json",
+  "title": "PostProductsBulkRequest",
+  "x-generated": "2026-10-12",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/clyde-openapi-generated.yml#/components/schemas/PostProductsBulkRequest",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "description": "The top-level object containing all of the request data"
+    },
+    "data.type": {
+      "type": "string",
+      "description": "Resource type, e.g., \"products\""
+    },
+    "data.attributes": {
+      "type": "object"
+    },
+    "data.attributes.products": {
+      "type": "array",
+      "description": "Array of product objects"
+    },
+    "data.attributes.products[].name": {
+      "type": "string"
+    },
+    "data.attributes.products[].type": {
+      "type": "string"
+    },
+    "data.attributes.products[].sku": {
+      "type": "string"
+    },
+    "data.attributes.products[].description": {
+      "type": "string"
+    },
+    "data.attributes.products[].manufacturer": {
+      "type": "string"
+    },
+    "data.attributes.products[].barcode": {
+      "type": "string"
+    },
+    "data.attributes.products[].price": {
+      "type": "number"
+    },
+    "data.attributes.products[].imageLink": {
+      "type": "string"
+    },
+    "data.attributes.products[].attributes": {
+      "type": "object",
+      "description": "Custom attributes for the product"
+    },
+    "data.attributes.products[].attributes.size": {
+      "type": "string"
+    },
+    "data.attributes.products[].attributes.color": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "data"
+  ]
+}
