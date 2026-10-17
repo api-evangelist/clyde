@@ -81,25 +81,26 @@ common:
 
 apis:
 - name: Clyde API
-  description: Clyde's API provides endpoints for warranty registration, issue resolution, and partnership tools.
+  description: >-
+    Clyde's API provides endpoints for warranty registration, issue resolution, and partnership tools.
   humanURL: https://docs.joinclyde.com/reference/introduction-1.md
   baseURL: null
   aid: clyde:clyde-api-2
-- aid: clyde:clyde-api
-  name: Clyde API
-  description: 'Clyde API as documented publicly: 9 operations. Contract generated from the documentation by API Evangelist (2026-10-12); not
-
-    the provider''s own document.'
-  humanURL: https://docs.joinclyde.com/reference/products-1
+- aid: clyde:clyde-contract-sales-api
+  name: Clyde Contract Sales API
+  description: The Contract Sales API from Clyde — 1 operation(s) for contract sales.
+  humanURL: https://docs.joinclyde.com/reference/introduction-1.md
   baseURL: https://api.joinclyde.com
+  tags:
+  - Contract Sales
   properties:
   - type: OpenAPI
-    url: openapi/_ae-authored/clyde-openapi-generated.yml
-    x-provenance: generated
+    url: openapi/clyde-contract-sales-api-openapi.yml
   - type: JSONSchema
     url: json-schema/clyde-post-orders-request-schema.json
   - type: JSONSchema
-    url: json-schema/clyde-post-contract-sales-fbd13-a8-fb74649888925456843-ddc533-claims-reque-schema.json
+    url: >-
+      json-schema/clyde-post-contract-sales-fbd13-a8-fb74649888925456843-ddc533-claims-reque-schema.json
   - type: JSONSchema
     url: json-schema/clyde-post-products-bulk-request-schema.json
   - type: JSONSchema
@@ -108,7 +109,98 @@ apis:
     url: json-schema/clyde-post-taxonomies-request-schema.json
   - type: JSONSchema
     url: json-schema/clyde-post-products-request-schema.json
-
+- aid: clyde:clyde-orders-api
+  name: Clyde Orders API
+  description: The Orders API from Clyde — 2 operation(s) for orders.
+  humanURL: https://docs.joinclyde.com/reference/introduction-1.md
+  baseURL: https://api.joinclyde.com
+  tags:
+  - Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/clyde-orders-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/clyde-post-orders-request-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/clyde-post-contract-sales-fbd13-a8-fb74649888925456843-ddc533-claims-reque-schema.json
+  - type: JSONSchema
+    url: json-schema/clyde-post-products-bulk-request-schema.json
+  - type: JSONSchema
+    url: json-schema/clyde-post-vouchers-bulk-request-schema.json
+  - type: JSONSchema
+    url: json-schema/clyde-post-taxonomies-request-schema.json
+  - type: JSONSchema
+    url: json-schema/clyde-post-products-request-schema.json
+- aid: clyde:clyde-products-api
+  name: Clyde Products API
+  description: The Products API from Clyde — 3 operation(s) for products.
+  humanURL: https://docs.joinclyde.com/reference/introduction-1.md
+  baseURL: https://api.joinclyde.com
+  tags:
+  - Products
+  properties:
+  - type: OpenAPI
+    url: openapi/clyde-products-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/clyde-post-orders-request-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/clyde-post-contract-sales-fbd13-a8-fb74649888925456843-ddc533-claims-reque-schema.json
+  - type: JSONSchema
+    url: json-schema/clyde-post-products-bulk-request-schema.json
+  - type: JSONSchema
+    url: json-schema/clyde-post-vouchers-bulk-request-schema.json
+  - type: JSONSchema
+    url: json-schema/clyde-post-taxonomies-request-schema.json
+  - type: JSONSchema
+    url: json-schema/clyde-post-products-request-schema.json
+- aid: clyde:clyde-taxonomies-api
+  name: Clyde Taxonomies API
+  description: The Taxonomies API from Clyde — 1 operation(s) for taxonomies.
+  humanURL: https://docs.joinclyde.com/reference/introduction-1.md
+  baseURL: https://api.joinclyde.com
+  tags:
+  - Taxonomies
+  properties:
+  - type: OpenAPI
+    url: openapi/clyde-taxonomies-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/clyde-post-orders-request-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/clyde-post-contract-sales-fbd13-a8-fb74649888925456843-ddc533-claims-reque-schema.json
+  - type: JSONSchema
+    url: json-schema/clyde-post-products-bulk-request-schema.json
+  - type: JSONSchema
+    url: json-schema/clyde-post-vouchers-bulk-request-schema.json
+  - type: JSONSchema
+    url: json-schema/clyde-post-taxonomies-request-schema.json
+  - type: JSONSchema
+    url: json-schema/clyde-post-products-request-schema.json
+- aid: clyde:clyde-vouchers-api
+  name: Clyde Vouchers API
+  description: The Vouchers API from Clyde — 2 operation(s) for vouchers.
+  humanURL: https://docs.joinclyde.com/reference/introduction-1.md
+  baseURL: https://api.joinclyde.com
+  tags:
+  - Vouchers
+  properties:
+  - type: OpenAPI
+    url: openapi/clyde-vouchers-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/clyde-post-orders-request-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/clyde-post-contract-sales-fbd13-a8-fb74649888925456843-ddc533-claims-reque-schema.json
+  - type: JSONSchema
+    url: json-schema/clyde-post-products-bulk-request-schema.json
+  - type: JSONSchema
+    url: json-schema/clyde-post-vouchers-bulk-request-schema.json
+  - type: JSONSchema
+    url: json-schema/clyde-post-taxonomies-request-schema.json
+  - type: JSONSchema
+    url: json-schema/clyde-post-products-request-schema.json
 x-backed-by:
 - starting-line-vc
 

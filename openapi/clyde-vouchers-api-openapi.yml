@@ -1,0 +1,142 @@
+openapi: 3.2.0
+info:
+  title: Clyde Vouchers API
+  version: '2026-10-12'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-12: 9 operation(s) read from 11 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Clyde has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 0
+    documentation: 9
+    pages-with-code: 0
+    pages-read: 11
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-12'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.joinclyde.com/reference/products-1
+  - https://docs.joinclyde.com/reference/createclaim
+  - https://docs.joinclyde.com/reference/createorder
+  - https://docs.joinclyde.com/reference/updateorder
+  - https://docs.joinclyde.com/reference/createproduct
+  - https://docs.joinclyde.com/reference/updateproduct
+  - https://docs.joinclyde.com/reference/updatevoucher
+  - https://docs.joinclyde.com/reference/createproducts
+  - https://docs.joinclyde.com/reference/createtaxonomy
+  - https://docs.joinclyde.com/reference/createvouchers
+  - https://docs.joinclyde.com/reference/addtaxonomyterm
+servers:
+- url: https://api.joinclyde.com
+tags:
+- name: Vouchers
+paths:
+  /vouchers/SOME-CODE:
+    put:
+      operationId: put_vouchers_SOME_CODE
+      tags:
+      - Vouchers
+      summary: Update Voucher
+      description: Updates a Voucher by code
+      x-source: https://docs.joinclyde.com/reference/updatevoucher
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutVouchersSomeCodeRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutVouchersSomeCodeResponse'
+      x-evidence:
+        kind: documentation
+  /vouchers/bulk:
+    post:
+      operationId: post_vouchers_bulk
+      tags:
+      - Vouchers
+      summary: Create Vouchers (Bulk)
+      description: Adds new vouchers to Clyde to be used with claims.
+      x-source: https://docs.joinclyde.com/reference/createvouchers
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostVouchersBulkRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostVouchersBulkResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    PostVouchersBulkResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          description: Response data object
+    PostVouchersBulkRequest:
+      type: object
+      properties:
+        data:
+          type: object
+          description: The top-level object containing all of the request data
+        data.type:
+          type: string
+          description: type of the resource, should be "voucher"
+        data.attributes:
+          type: object
+        data.attributes.vouchers:
+          type: array
+          description: Array of voucher objects to create
+        data.attributes.vouchers[].code:
+          type: string
+          description: Voucher code
+        data.attributes.vouchers[].productSku:
+          type: string
+          description: Product SKU associated with the voucher
+        data.attributes.vouchers[].value:
+          type: number
+          description: Value of the voucher
+        data.attributes.vouchers[].description:
+          type: string
+          description: Description of the voucher
+        data.attributes.vouchers[].expiresDate:
+          type: string
+          description: Expiration date of the voucher
+        data.attributes.vouchers[].startDate:
+          type: string
+          description: Start date of the voucher
+      required:
+      - data
+    PutVouchersSomeCodeResponse:
+      type: object
+      properties:
+        default:
+          type: string
+          description: Response example (updated voucher)
+    PutVouchersSomeCodeRequest:
+      type: object
+      properties:
+        data:
+          type: object
+          description: The top-level object containing all of the request data
+        data.type:
+          type: string
+          description: Resource type, must be "voucher"
+        data.attributes.voucher.value:
+          type: number
+          description: New voucher value
+      required:
+      - data
+      - data.type

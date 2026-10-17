@@ -1,0 +1,22 @@
+{
+  "provider": "clyde",
+  "sources": [
+    "_ae-authored/clyde-openapi-generated.yml"
+  ],
+  "outputs": [
+    "clyde-contract-sales-api-openapi.yml",
+    "clyde-orders-api-openapi.yml",
+    "clyde-products-api-openapi.yml",
+    "clyde-taxonomies-api-openapi.yml",
+    "clyde-vouchers-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "clyde-openapi-generated.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: written (+5 apis, 6 total)"
+  ],
+  "skipped": []
+}

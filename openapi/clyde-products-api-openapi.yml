@@ -1,0 +1,186 @@
+openapi: 3.2.0
+info:
+  title: Clyde Products API
+  version: '2026-10-12'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-12: 9 operation(s) read from 11 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Clyde has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 0
+    documentation: 9
+    pages-with-code: 0
+    pages-read: 11
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-12'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.joinclyde.com/reference/products-1
+  - https://docs.joinclyde.com/reference/createclaim
+  - https://docs.joinclyde.com/reference/createorder
+  - https://docs.joinclyde.com/reference/updateorder
+  - https://docs.joinclyde.com/reference/createproduct
+  - https://docs.joinclyde.com/reference/updateproduct
+  - https://docs.joinclyde.com/reference/updatevoucher
+  - https://docs.joinclyde.com/reference/createproducts
+  - https://docs.joinclyde.com/reference/createtaxonomy
+  - https://docs.joinclyde.com/reference/createvouchers
+  - https://docs.joinclyde.com/reference/addtaxonomyterm
+servers:
+- url: https://api.joinclyde.com
+tags:
+- name: Products
+paths:
+  /products:
+    post:
+      operationId: post_products
+      tags:
+      - Products
+      summary: Create Product
+      description: Adds a new product to Clyde to be matched with contracts
+      x-source: https://docs.joinclyde.com/reference/products-1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostProductsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostProductsResponse'
+      x-evidence:
+        kind: documentation
+  /products/SKU789:
+    put:
+      operationId: put_products_SKU789
+      tags:
+      - Products
+      summary: Update Product
+      description: A product's SKU can be changed by using this endpoint with the current SKU in the request URL, and the new SKU in the request body. Only provided fields will be updated.
+      x-source: https://docs.joinclyde.com/reference/updateproduct
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutProductsSku789Request'
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /products/bulk:
+    post:
+      operationId: post_products_bulk
+      tags:
+      - Products
+      summary: Adds new products to Clyde to be matched with contracts
+      description: Adds multiple products at once, limit 10,000/minute unless you contact support or are connected through a preferred partnership.
+      x-source: https://docs.joinclyde.com/reference/createproducts
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostProductsBulkRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    PostProductsBulkRequest:
+      type: object
+      properties:
+        data:
+          type: object
+          description: The top-level object containing all of the request data
+        data.type:
+          type: string
+          description: Resource type, e.g., "products"
+        data.attributes:
+          type: object
+        data.attributes.products:
+          type: array
+          description: Array of product objects
+        data.attributes.products[].name:
+          type: string
+        data.attributes.products[].type:
+          type: string
+        data.attributes.products[].sku:
+          type: string
+        data.attributes.products[].description:
+          type: string
+        data.attributes.products[].manufacturer:
+          type: string
+        data.attributes.products[].barcode:
+          type: string
+        data.attributes.products[].price:
+          type: number
+        data.attributes.products[].imageLink:
+          type: string
+        data.attributes.products[].attributes:
+          type: object
+          description: Custom attributes for the product
+        data.attributes.products[].attributes.size:
+          type: string
+        data.attributes.products[].attributes.color:
+          type: string
+      required:
+      - data
+    PostProductsRequest:
+      type: object
+      properties:
+        data:
+          type: object
+          description: The top-level object containing all of the request data
+        data.type:
+          type: string
+          description: type of the object, must be "product"
+        data.attributes:
+          type: object
+          description: Attributes of the product
+        data.attributes.name:
+          type: string
+        data.attributes.type:
+          type: string
+        data.attributes.sku:
+          type: string
+        data.attributes.description:
+          type: string
+        data.attributes.manufacturer:
+          type: string
+        data.attributes.barcode:
+          type: string
+        data.attributes.price:
+          type: number
+        data.attributes.imageLink:
+          type: string
+        data.attributes.oemWarrantyLength:
+          type: integer
+        data.attributes.attributes:
+          type: object
+          description: Custom attributes such as size and color
+      required:
+      - data
+      - data.type
+      - data.attributes
+    PostProductsResponse:
+      type: object
+      properties:
+        default:
+          type: object
+          description: Response default
+    PutProductsSku789Request:
+      type: object
+      properties:
+        data:
+          type: object
+          description: The top-level object containing all of the request data
+      required:
+      - data

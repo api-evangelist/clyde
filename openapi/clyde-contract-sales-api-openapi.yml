@@ -1,0 +1,117 @@
+openapi: 3.2.0
+info:
+  title: Clyde Contract Sales API
+  version: '2026-10-12'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-12: 9 operation(s) read from 11 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Clyde has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 0
+    documentation: 9
+    pages-with-code: 0
+    pages-read: 11
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-12'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.joinclyde.com/reference/products-1
+  - https://docs.joinclyde.com/reference/createclaim
+  - https://docs.joinclyde.com/reference/createorder
+  - https://docs.joinclyde.com/reference/updateorder
+  - https://docs.joinclyde.com/reference/createproduct
+  - https://docs.joinclyde.com/reference/updateproduct
+  - https://docs.joinclyde.com/reference/updatevoucher
+  - https://docs.joinclyde.com/reference/createproducts
+  - https://docs.joinclyde.com/reference/createtaxonomy
+  - https://docs.joinclyde.com/reference/createvouchers
+  - https://docs.joinclyde.com/reference/addtaxonomyterm
+servers:
+- url: https://api.joinclyde.com
+tags:
+- name: Contract Sales
+paths:
+  /contract-sales/fbd13a8f-b746-4988-8925-456843ddc533/claims:
+    post:
+      operationId: post_contract_sales_fbd13a8f_b746_4988_8925_456843ddc533_claims
+      tags:
+      - Contract Sales
+      summary: Reporting a claim filed by a customer to Clyde
+      description: A claim is filed on an individual contract sale, using the ID of the contract sale returned in the order creation response.
+      x-source: https://docs.joinclyde.com/reference/createclaim
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostContractSalesFbd13A8FB74649888925456843Ddc533ClaimsReque'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostContractSalesFbd13A8FB74649888925456843Ddc533ClaimsRespo'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    PostContractSalesFbd13A8FB74649888925456843Ddc533ClaimsRespo:
+      type: object
+      properties:
+        status:
+          type: string
+          description: 'One of: inProcess, denied, underClydeReview, approved'
+        history:
+          type: array
+          description: Events in the claim's history since creation
+    PostContractSalesFbd13A8FB74649888925456843Ddc533ClaimsReque:
+      type: object
+      properties:
+        data:
+          type: object
+          description: Top‑level object containing all of the request data
+        data.type:
+          type: string
+          description: Must be "claim"
+        data.attributes:
+          type: object
+          description: Attributes of the claim
+        data.attributes.claimType:
+          type: string
+          description: Type of claim (e.g., "stoppedWorking")
+        data.attributes.description:
+          type: string
+          description: Description of the issue
+        data.attributes.failureDate:
+          type: string
+          description: Date of failure (UTC, format YYYY‑MM‑DD)
+        data.attributes.filedDate:
+          type: string
+          description: Date the claim was filed (UTC, format YYYY‑MM‑DD)
+        data.attributes.retailerAssessment:
+          type: object
+          description: Details of any retailer assessment performed before creating the claim
+        data.attributes.retailerAssessment.date:
+          type: string
+          description: Assessment date (UTC, format YYYY‑MM‑DD)
+        data.attributes.retailerAssessment.status:
+          type: string
+          description: Assessment status (e.g., "approved")
+        data.attributes.retailerAssessment.resolutionType:
+          type: string
+          description: Resolution type (e.g., "replace")
+        data.attributes.retailerAssessment.resolutionMethod:
+          type: string
+          description: Resolution method (e.g., "payout")
+        data.attributes.retailerAssessment.resolutionQuote:
+          type: number
+          description: Monetary quote for the resolution
+      required:
+      - data
+      - data.type
+      - data.attributes
+      - data.attributes.claimType
+      - data.attributes.description
+      - data.attributes.failureDate
+      - data.attributes.filedDate

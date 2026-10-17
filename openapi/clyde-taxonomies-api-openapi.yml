@@ -1,0 +1,116 @@
+openapi: 3.2.0
+info:
+  title: Clyde Taxonomies API
+  version: '2026-10-12'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-12: 9 operation(s) read from 11 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Clyde has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 0
+    documentation: 9
+    pages-with-code: 0
+    pages-read: 11
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-12'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.joinclyde.com/reference/products-1
+  - https://docs.joinclyde.com/reference/createclaim
+  - https://docs.joinclyde.com/reference/createorder
+  - https://docs.joinclyde.com/reference/updateorder
+  - https://docs.joinclyde.com/reference/createproduct
+  - https://docs.joinclyde.com/reference/updateproduct
+  - https://docs.joinclyde.com/reference/updatevoucher
+  - https://docs.joinclyde.com/reference/createproducts
+  - https://docs.joinclyde.com/reference/createtaxonomy
+  - https://docs.joinclyde.com/reference/createvouchers
+  - https://docs.joinclyde.com/reference/addtaxonomyterm
+servers:
+- url: https://api.joinclyde.com
+tags:
+- name: Taxonomies
+paths:
+  /taxonomies:
+    post:
+      operationId: post_taxonomies
+      tags:
+      - Taxonomies
+      summary: Creates a new taxonomy tree
+      x-source: https://docs.joinclyde.com/reference/createtaxonomy
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostTaxonomiesRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostTaxonomiesResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    PostTaxonomiesResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          description: Array of created taxonomy term objects
+        data[].type:
+          type: string
+          description: Resource type, e.g., "taxonomy"
+        data[].attributes.id:
+          type: string
+          description: UUIDv4 identifier of the term
+        data[].attributes.term:
+          type: string
+          description: Term name
+        data[].attributes.parentId:
+          type: string
+          description: UUIDv4 identifier of the parent term
+        data[].attributes.level:
+          type: integer
+          description: Depth level of the term
+        data[].attributes.treeId:
+          type: string
+          description: Identifier of the taxonomy tree
+    PostTaxonomiesRequest:
+      type: object
+      properties:
+        data:
+          type: object
+          description: Root object for the request payload
+        data.type:
+          type: string
+          description: Must be "taxonomies"
+        data.attributes:
+          type: object
+          description: Attributes container
+        data.attributes.terms:
+          type: array
+          description: Array of taxonomy terms
+        data.attributes.terms[].id:
+          type: string
+          description: UUIDv4 identifier for the term
+        data.attributes.terms[].term:
+          type: string
+          description: The actual category or name of the item
+        data.attributes.terms[].parentId:
+          type: string
+          description: UUIDv4 identifier of the parent term, if any
+        data.attributes.terms[].level:
+          type: integer
+          description: Depth of the term in the hierarchy (0 = root)
+      required:
+      - data
+      - data.type
+      - data.attributes
+      - data.attributes.terms
+      - data.attributes.terms[].id
+      - data.attributes.terms[].term
+      - data.attributes.terms[].level
